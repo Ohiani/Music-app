@@ -36,7 +36,8 @@ const TopPlay = ({}) => {
           <Link to={`/songs/${song.key}`}>
             <p className=" text-xl font-bold text-white">{song?.title}</p>          
           </Link>
-          <Link to={`/artists/${song?.artists[0].adamid}`}>
+          <Link to={`/artists/${song?.artists[0]?.adamid}`}>
+            {console.log(song.artists[0])}
             <p className=" text-base text-gray-300 mt-1 ">{song?.subtitle}</p>          
           </Link>
         </div>
@@ -111,7 +112,7 @@ return (
             style={{width: '20%', height: 'auto'}}
             className='shadow-lg rounded-full animate-slideright'
             >
-              <Link to={'/artists/${song?.artists[0].adamid}'}>
+              <Link to={`/artists/${song?.artists[0].adamid}`}>
                 <img src={song?.images?.background} alt="artist" 
                 className="rounded-full object-cover w-full"
                 />
